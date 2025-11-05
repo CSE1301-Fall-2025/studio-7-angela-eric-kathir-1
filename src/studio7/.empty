@@ -1,0 +1,62 @@
+public class Point{
+
+    public static void main(String[] args){
+        Point p1 = new Point(5, 7);
+        Point p2 = new Point(8, 23);
+        //Now to find area
+        double rectArea = findArea(p1, p2);
+        System.out.println("The area of the rectangle is " + rectArea);
+        //Find Perimeter
+        double xLength = defineXLength(p1, p2);
+        double yLength = defineYLength(p1, p2);
+        double perimeter = (2 * xLength) + (2 * yLength);
+        System.out.println("The perimeter of the rectangle is " + perimeter);
+        //Compare areas
+        //Define second rectangle
+        Point q1 = new Point(2, 6);
+        Point q2 = new Point(7, 9);
+        double areaOne = findArea(p1, p2);
+        double areaTwo = findArea(q1, q2);
+        if(areaOne > areaTwo){
+            System.out.println("Rectangle one is larger than rectangle two.");
+        } else if(areaOne < areaTwo){
+            System.out.println("Rectangle one is smaller than rectangle two.");
+        } else {
+            System.out.println("The rectangles are the same size.");
+        }
+        //Indicate whether it is a square
+        if(xLength = yLength){
+            System.out.println("This rectangle is a square.");
+        } else {
+            System.out.println("This rectangle is not a square.");
+        }
+    }
+
+    public double xValue;
+    public double yValue;
+
+    public Point(double x, double y){
+        xValue = x;
+        yValue = y;
+    }
+
+    public static double defineXLength(Point p1, p2){
+        double xLength = Math.abs(p1.x - p2.x);
+        return xLength;
+    }
+
+    public static double defineYLength(Point p1, p2){
+        double yLength = Math.abs(p1.y - p2.y);
+        return yLength;
+    }
+
+    public static double findArea(Point p1, Point p2){
+        double xLength = defineXLength(p1, p2);
+        double yLength = defineYLength(p1, p2);
+        double area = xLength * yLength;
+        return area;
+    }
+
+    
+}
+
